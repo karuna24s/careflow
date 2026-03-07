@@ -24,11 +24,11 @@ To architect a production-ready, full-stack TypeScript environment demonstrating
 ### Phase 1: Foundation (Current)
 - [x] Initialize Git repository and professional structure.
 - [x] Configure Root `package.json` with npm workspaces.
-- [ ] Setup `apps/api` (Node/TS/Express) with strict compiler settings.
-- [ ] Setup `apps/web` (React/TS/Vite).
+- [x] Setup `apps/api` (Node/TS/Express) with strict compiler settings.
+- [x] Setup `apps/web` (React/TS/Vite).
 
 ### Phase 2: Core Engineering
-- [ ] **Data Model:** Define the `IntakeSchema` using Zod for robust validation.
+- [x] **Data Model:** Define the `IntakeSchema` using Zod for robust validation.
 - [ ] **API:** Implement Express server with validation middleware.
 - [ ] **UI:** Build a multi-step intake interface with React and TypeScript.
 - [ ] **Sync:** Ensure type-sharing between the API and Web workspaces.
