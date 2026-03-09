@@ -1,16 +1,27 @@
-import express, { Request, Response } from 'express';
-
-export * from '@careflow/shared/schemas/intake';
+import express from "express";
+import cors from "cors";
+// Note: In ESM mode, TypeScript requires the .js extension for local imports
+import intakeRouter from "./routes/intake.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(express.json());
+// Middleware
+app.use(cors()); // Allows the Vite frontend (usually :5173) to communicate
+app.use(express.json()); // Parses incoming JSON payloads
 
-app.get('/health', (req: Request, res: Response) => {
-  res.json({ status: 'active', timestamp: new Date().toISOString() });
+// Register Routes
+app.use("/api/intake", intakeRouter);
+
+// Health Check
+app.get("/health", (req, res) => {
+  res.json({
+    status: "ok",
+    service: "CareFlow-Behavioral-API",
+    version: "1.0.0"
+  });
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 CareFlow API listening on port ${PORT}`);
+  console.log(`🚀 CareFlow Clinical API running at http://localhost:${PORT}`);
 });

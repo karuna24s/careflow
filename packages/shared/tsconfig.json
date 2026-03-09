@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      /* Base environment */
+      "target": "ESNext",
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+
+      /* Output for the Monorepo */
+      "declaration": true,      // Generates .d.ts files so other apps see the types
+      "declarationMap": true,   // Allows "Go to Definition" to work across folders
+      "sourceMap": true,        // Helpful for debugging
+      "outDir": "./dist",
+      "rootDir": "./src",
+
+      /* Strictness & Safety */
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "isolatedModules": true,   // Ensures compatibility with Vite/esbuild
+
+      /* NodeNext requires explicit extensions, but we can relax this for internal dev */
+      "moduleDetection": "force"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+  }

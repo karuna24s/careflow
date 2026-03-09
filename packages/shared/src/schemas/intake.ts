@@ -1,21 +1,16 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const PatientIntakeSchema = z.object({
-  // Demographics
-  firstName: z.string().min(2, "Required"),
-  lastName: z.string().min(2, "Required"),
-  email: z.string().email("Invalid email"),
-  zipCode: z.string().length(5, "Must be 5 digits"),
-  // Clinical/Care Needs
-  careType: z.enum(['behavioral_health', 'childcare', 'other']),
-  reasonForVisit: z.string().min(10, "Please provide more detail"),
-  // Reliability: Status field for partial saves
-  status: z.enum(['draft', 'submitted']).default('draft'),
-  householdSize: z.number().int().min(1).optional(),
-  // Handle conditional validation for childcare eligibility
-}).refine((data) => {
-  if (data.careType === 'childcare' && !data.householdSize) return false;
-  return true;
-}, { message: "Household size is required for childcare eligibility." });
+  // Rule: Must select a service
+  serviceType: z.string().min(1, "Please select a childcare service"),
+
+  // Rule: Age is mandatory and must be a number
+  childAge: z.coerce
+    .number({
+      error: "Child's age is required for behavioral matching"
+    })
+    .min(0, "Age cannot be negative")
+    .max(18, "Child must be 18 or younger"),
+});
 
 export type PatientIntake = z.infer<typeof PatientIntakeSchema>;

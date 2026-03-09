@@ -1,17 +1,17 @@
 {
-    "compilerOptions": {
-      "target": "ES2022",
-      "module": "NodeNext",
-      "moduleResolution": "NodeNext",
-      "baseUrl": ".",
-      "outDir": "./dist",
-      "strict": true,                // The "Must-Have" for Senior TS
-      "noImplicitAny": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
-    },
-    "include": ["src/**/*"]
-  }
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@careflow/shared": ["../../packages/shared/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*"]
+}
