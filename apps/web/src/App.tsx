@@ -32,29 +32,6 @@ function App() {
           <IntakeForm />
         </main>
 
-        {/* Documentation / "How to Test" Section */}
-        <section className="mt-16 max-w-2xl mx-auto border-t border-slate-200 pt-8">
-          <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">
-            Verification Steps
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
-              <span className="text-blue-600 font-bold mb-2 block">01. Shared Logic</span>
-              <p className="text-sm text-slate-600">
-                Select <strong>Childcare</strong> and leave Household Size empty.
-                The error message is defined once in <code>packages/shared</code>.
-              </p>
-            </div>
-            <div className="p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
-              <span className="text-blue-600 font-bold mb-2 block">02. Type Safety</span>
-              <p className="text-sm text-slate-600">
-                The form is strictly typed using <code>PatientIntake</code>, ensuring
-                data integrity from input to API.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Footer */}
         <footer className="mt-20 text-center text-slate-400 text-sm">
           Built with React 19, Vite 7, and Zod v4.

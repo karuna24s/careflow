@@ -29,14 +29,14 @@ To architect a production-ready, full-stack TypeScript environment demonstrating
 
 ### Phase 2: Core Engineering
 - [x] **Data Model:** Define the `IntakeSchema` using Zod for robust validation.
-- [ ] **API:** Implement Express server with validation middleware.
-- [ ] **UI:** Build a multi-step intake interface with React and TypeScript.
-- [ ] **Sync:** Ensure type-sharing between the API and Web workspaces.
+- [x] **API:** Implement Express server with validation middleware.
+- [x] **UI:** Build a multi-step intake interface with React and TypeScript.
+- [x] **Sync:** Ensure type-sharing between the API and Web workspaces.
 
 ### Phase 3: Senior Polish
-- [ ] **Error Handling:** Implement global error-handling middleware for standardized API responses.
-- [ ] **Documentation:** Add a `DESIGN.md` focusing on system scalability and security.
-- [ ] **Testing:** Implement unit tests for core validation logic.
+- [x] **Error Handling:** Implement global error-handling middleware for standardized API responses.
+- [x] **Documentation:** Add a `DESIGN.md` focusing on system scalability and security.
+- [x] **Testing:** Implement unit tests for core validation logic.
 
 ---
 
